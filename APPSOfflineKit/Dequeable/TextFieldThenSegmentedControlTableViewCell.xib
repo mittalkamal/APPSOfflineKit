@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TwoColumnTextFieldsTableViewCell" rowHeight="98" id="ugU-Jv-FYT" userLabel="Two Column Text Fields Table View Cell" customClass="TextFieldThenSegmentedControlTableViewCell" customModule="APPSOfflineKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugU-Jv-FYT" id="heD-Eb-Zlf">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HRR-N9-TNn" userLabel="Left Column" customClass="TwoColumnTextFieldsColumnView" customModule="APPSOfflineKit">
+                        <rect key="frame" x="60" y="20" width="230" height="57.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZSf-J0-SyS">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Title1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-fM-oxp">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Detail1" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-fx-Tmu" customClass="FormTextField" customModule="APPSOfflineKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="18" width="230" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ZlP-58-sYA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Help1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iv-3E-76V">
+                                <rect key="frame" x="0.0" y="43" width="230" height="14.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <connections>
+                            <outlet property="detailTextField" destination="uh5-fx-Tmu" id="gJT-U3-zhG"/>
+                            <outlet property="helpLabel" destination="1Iv-3E-76V" id="9gV-2w-MOh"/>
+                            <outlet property="requiredFieldIndicator" destination="VyG-GY-aNi" id="38R-s7-iGE"/>
+                            <outlet property="titleLabel" destination="wL6-fM-oxp" id="Rus-PW-kL9"/>
+                        </connections>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-jL-3Cv" userLabel="Right Column" customClass="SegmentedControlColumnView" customModule="APPSOfflineKit" customModuleProvider="target">
+                        <rect key="frame" x="310" y="20" width="230" height="57.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-U4-I2Y">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Title2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEp-kZ-Jzt">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="byM-LR-Gwn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9jS-4I-60V" userLabel="Segmented Control">
+                                        <rect key="frame" x="0.0" y="23" width="230" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Ed3-ie-EmU"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="handleSegmentedControlValueChanged:" destination="ugU-Jv-FYT" eventType="valueChanged" id="161-AL-nH8"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Help2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De3-Mw-abA">
+                                <rect key="frame" x="0.0" y="48" width="230" height="9.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <connections>
+                            <outlet property="helpLabel" destination="De3-Mw-abA" id="wr0-uo-1o2"/>
+                            <outlet property="requiredFieldIndicator" destination="u3y-uJ-N4h" id="51m-Ga-vwm"/>
+                            <outlet property="segmentedControl" destination="9jS-4I-60V" id="9ji-Qk-ffp"/>
+                            <outlet property="titleLabel" destination="iEp-kZ-Jzt" id="tCq-9U-dGT"/>
+                        </connections>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyG-GY-aNi" userLabel="Left Required Field Indicator">
+                        <rect key="frame" x="53" y="20" width="1" height="39"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.25172281270000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="hQw-B8-wpb"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-uJ-N4h" userLabel="Right Required Field Indicator">
+                        <rect key="frame" x="303" y="20" width="1" height="44"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.25172281270000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="Rwc-Yx-HG6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jbp-jL-3Cv" firstAttribute="leading" secondItem="HRR-N9-TNn" secondAttribute="trailing" constant="20" id="0Gk-xY-2FG"/>
+                    <constraint firstItem="VyG-GY-aNi" firstAttribute="bottom" secondItem="ZSf-J0-SyS" secondAttribute="bottom" id="3bl-ja-FdL"/>
+                    <constraint firstItem="jbp-jL-3Cv" firstAttribute="top" secondItem="heD-Eb-Zlf" secondAttribute="top" constant="20" id="Ccj-bX-rRK"/>
+                    <constraint firstItem="HRR-N9-TNn" firstAttribute="top" secondItem="heD-Eb-Zlf" secondAttribute="top" constant="20" id="MZM-oc-YOD"/>
+                    <constraint firstItem="jbp-jL-3Cv" firstAttribute="leading" secondItem="u3y-uJ-N4h" secondAttribute="trailing" constant="6" id="OdY-IT-9Ze"/>
+                    <constraint firstItem="jbp-jL-3Cv" firstAttribute="width" secondItem="HRR-N9-TNn" secondAttribute="width" id="Rsw-1Z-Wba"/>
+                    <constraint firstItem="u3y-uJ-N4h" firstAttribute="top" secondItem="FBf-U4-I2Y" secondAttribute="top" id="Zvf-G9-aif"/>
+                    <constraint firstItem="u3y-uJ-N4h" firstAttribute="bottom" secondItem="FBf-U4-I2Y" secondAttribute="bottom" id="bKa-GY-4tN"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HRR-N9-TNn" secondAttribute="bottom" constant="20" id="byd-ea-Xly"/>
+                    <constraint firstItem="FBf-U4-I2Y" firstAttribute="top" secondItem="ZSf-J0-SyS" secondAttribute="top" id="eou-t5-7sB"/>
+                    <constraint firstItem="VyG-GY-aNi" firstAttribute="top" secondItem="ZSf-J0-SyS" secondAttribute="top" id="fLm-cz-pyZ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jbp-jL-3Cv" secondAttribute="bottom" constant="20" id="ihp-6S-duN"/>
+                    <constraint firstAttribute="trailing" secondItem="jbp-jL-3Cv" secondAttribute="trailing" constant="60" id="oYr-Ws-OwT"/>
+                    <constraint firstItem="HRR-N9-TNn" firstAttribute="leading" secondItem="heD-Eb-Zlf" secondAttribute="leading" constant="60" id="sbn-Kz-bI6"/>
+                    <constraint firstItem="HRR-N9-TNn" firstAttribute="leading" secondItem="VyG-GY-aNi" secondAttribute="trailing" constant="6" id="wVm-4Y-GDI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="leftColumnView" destination="HRR-N9-TNn" id="IHZ-pc-AeM"/>
+                <outlet property="rightColumnView" destination="jbp-jL-3Cv" id="HGb-iT-s6i"/>
+            </connections>
+            <point key="canvasLocation" x="-215" y="-1"/>
+        </tableViewCell>
+    </objects>
+</document>

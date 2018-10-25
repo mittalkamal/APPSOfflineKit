@@ -1,0 +1,71 @@
+{
+    "swiftModelName": "Test",
+    "soupName": "tests",
+    "objectType": "Inspection__c",
+    "fields": [
+               {
+               "fieldName": "RequiredString",
+               "fieldType": "string",
+               "searchable": false,
+               "nullable": false,
+               "swiftFieldName": "RequiredString",
+               "swiftPropertyName": "requiredString"
+               },
+               {
+               "fieldName": "OptionalString",
+               "fieldType": "string",
+               "searchable": false,
+               "nullable": true,
+               "swiftFieldName": "OptionalString",
+               "swiftPropertyName": "optionalString"
+               },
+               {
+               "fieldName": "RequiredInt",
+               "fieldType": "int",
+               "searchable": false,
+               "nullable": false,
+               "swiftFieldName": "RequiredInt",
+               "swiftPropertyName": "requiredInt"
+               },
+               {
+               "fieldName": "OptionalInt",
+               "fieldType": "int",
+               "searchable": false,
+               "nullable": true,
+               "swiftFieldName": "OptionalInt",
+               "swiftPropertyName": "optionalInt"
+               },
+               {
+               "fieldName": "RequiredBool",
+               "fieldType": "bool",
+               "searchable": false,
+               "nullable": false,
+               "swiftFieldName": "RequiredBool",
+               "swiftPropertyName": "requiredBool"
+               },
+               {
+               "fieldName": "OptionalBool",
+               "fieldType": "bool",
+               "searchable": false,
+               "nullable": true,
+               "swiftFieldName": "OptionalBool",
+               "swiftPropertyName": "optionalBool"
+               },
+               {
+               "fieldName": "RequiredDouble",
+               "fieldType": "double",
+               "searchable": false,
+               "nullable": false,
+               "swiftFieldName": "RequiredDouble",
+               "swiftPropertyName": "requiredDouble"
+               },
+               {
+               "fieldName": "OptionalDouble",
+               "fieldType": "double",
+               "searchable": false,
+               "nullable": true,
+               "swiftFieldName": "OptionalDouble",
+               "swiftPropertyName": "optionalDouble"
+               }
+               ]
+}
