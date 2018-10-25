@@ -1,0 +1,115 @@
+PODS:
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/SQLCipher (2.7.2):
+    - SQLCipher
+  - FMDB/standard (2.7.2)
+  - PSOperations (3.0.0):
+    - PSOperations/Core (= 3.0.0)
+    - PSOperations/Health (= 3.0.0)
+    - PSOperations/Passbook (= 3.0.0)
+  - PSOperations/Core (3.0.0)
+  - PSOperations/Health (3.0.0):
+    - PSOperations/Core
+  - PSOperations/Passbook (3.0.0):
+    - PSOperations/Core
+  - Reusable (4.0.3):
+    - Reusable/Storyboard (= 4.0.3)
+    - Reusable/View (= 4.0.3)
+  - Reusable/Storyboard (4.0.3)
+  - Reusable/View (4.0.3)
+  - SalesforceAnalytics (5.3.0):
+    - SalesforceAnalytics/SalesforceAnalytics (= 5.3.0)
+  - SalesforceAnalytics/SalesforceAnalytics (5.3.0):
+    - CocoaLumberjack (~> 2.4.0)
+  - SalesforceSDKCore (5.3.0):
+    - SalesforceSDKCore/SalesforceSDKCore (= 5.3.0)
+  - SalesforceSDKCore/SalesforceSDKCore (5.3.0):
+    - SalesforceAnalytics
+    - SalesforceSDKCore/SalesforceSDKCore/arc (= 5.3.0)
+    - SalesforceSDKCore/SalesforceSDKCore/base (= 5.3.0)
+    - SalesforceSDKCore/SalesforceSDKCore/no-arc (= 5.3.0)
+  - SalesforceSDKCore/SalesforceSDKCore/arc (5.3.0):
+    - SalesforceAnalytics
+    - SalesforceSDKCore/SalesforceSDKCore/base
+    - SalesforceSDKCore/SalesforceSDKCore/no-arc
+  - SalesforceSDKCore/SalesforceSDKCore/base (5.3.0):
+    - SalesforceAnalytics
+  - SalesforceSDKCore/SalesforceSDKCore/no-arc (5.3.0):
+    - SalesforceAnalytics
+    - SalesforceSDKCore/SalesforceSDKCore/base
+  - SmartStore (5.3.0):
+    - SmartStore/SmartStore (= 5.3.0)
+  - SmartStore/SmartStore (5.3.0):
+    - FMDB/SQLCipher (~> 2.7.2)
+    - SalesforceSDKCore
+    - SQLCipher/fts (~> 3.4.1)
+  - SmartSync (5.3.0):
+    - SmartSync/SmartSync (= 5.3.0)
+  - SmartSync/SmartSync (5.3.0):
+    - SalesforceSDKCore
+    - SmartStore
+  - SQLCipher (3.4.2):
+    - SQLCipher/standard (= 3.4.2)
+  - SQLCipher/common (3.4.2)
+  - SQLCipher/fts (3.4.2):
+    - SQLCipher/common
+  - SQLCipher/standard (3.4.2):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - FMDB (from `https://github.com/forcedotcom/fmdb`, branch `2.7.2_xcode9`)
+  - PSOperations (~> 3.0.0)
+  - Reusable
+  - SalesforceAnalytics (from `SFDCsdk/SalesforceMobileSDK-iOS`)
+  - SalesforceSDKCore (from `SFDCsdk/SalesforceMobileSDK-iOS`)
+  - SmartStore (from `SFDCsdk/SalesforceMobileSDK-iOS`)
+  - SmartSync (from `SFDCsdk/SalesforceMobileSDK-iOS`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaLumberjack
+    - PSOperations
+    - Reusable
+    - SQLCipher
+
+EXTERNAL SOURCES:
+  FMDB:
+    :branch: 2.7.2_xcode9
+    :git: https://github.com/forcedotcom/fmdb
+  SalesforceAnalytics:
+    :path: SFDCsdk/SalesforceMobileSDK-iOS
+  SalesforceSDKCore:
+    :path: SFDCsdk/SalesforceMobileSDK-iOS
+  SmartStore:
+    :path: SFDCsdk/SalesforceMobileSDK-iOS
+  SmartSync:
+    :path: SFDCsdk/SalesforceMobileSDK-iOS
+
+CHECKOUT OPTIONS:
+  FMDB:
+    :commit: 65237ca2f390f2fa7701f34cbef11319f65402af
+    :git: https://github.com/forcedotcom/fmdb
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  PSOperations: 6bc00aac233d9d19b60caced190e6cb8fbcb1dcd
+  Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
+  SalesforceAnalytics: b2af719a2fb24d5197b93e9c268d7414f5de813c
+  SalesforceSDKCore: fff193c0b4b6b6458fbfdc4ae91dc758227874db
+  SmartStore: 126d207dda3be018fbc456a3ee4795cb964d4665
+  SmartSync: a1fe80a3fea39d3e89c25e337827636b1528ed49
+  SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+
+PODFILE CHECKSUM: 40edf52b3f006c5e1981b8cb5776a89b007445f2
+
+COCOAPODS: 1.5.0

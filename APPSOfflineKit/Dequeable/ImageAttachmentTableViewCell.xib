@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageAttachmentTableViewCell" rowHeight="141" id="ZpB-e1-bhk" userLabel="ImageAttachmentTableViewCell" customClass="ImageAttachmentTableViewCell" customModule="APPSOfflineKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZpB-e1-bhk" id="4c6-yo-qXG">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="140.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="OFp-Lc-yu9">
+                        <rect key="frame" x="180" y="20" width="240" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="cs1-bO-QPa"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yS3-fw-KF5">
+                        <rect key="frame" x="60" y="20" width="38" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-YC-ako">
+                                <rect key="frame" x="0.0" y="0.0" width="38" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVU-MM-vXN">
+                                <rect key="frame" x="0.0" y="20.5" width="38" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OFp-Lc-yu9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yS3-fw-KF5" secondAttribute="trailing" constant="8" id="7pU-Yo-KAI"/>
+                    <constraint firstItem="yS3-fw-KF5" firstAttribute="leading" secondItem="4c6-yo-qXG" secondAttribute="leading" constant="60" id="SbI-GC-XRP"/>
+                    <constraint firstItem="OFp-Lc-yu9" firstAttribute="centerX" secondItem="4c6-yo-qXG" secondAttribute="centerX" id="Yr0-5l-PVb"/>
+                    <constraint firstItem="OFp-Lc-yu9" firstAttribute="top" secondItem="4c6-yo-qXG" secondAttribute="top" constant="20" id="bd5-UX-gJ3"/>
+                    <constraint firstAttribute="bottom" secondItem="OFp-Lc-yu9" secondAttribute="bottom" constant="20" id="dy8-KS-huT"/>
+                    <constraint firstItem="yS3-fw-KF5" firstAttribute="top" secondItem="4c6-yo-qXG" secondAttribute="top" constant="20" id="xFD-Ue-yYL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Khk-YC-ako" id="6Bs-J8-6Uv"/>
+                <outlet property="imageAttachmentView" destination="OFp-Lc-yu9" id="bqT-g5-chA"/>
+                <outlet property="timeLabel" destination="BVU-MM-vXN" id="9iM-ZO-KnF"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
