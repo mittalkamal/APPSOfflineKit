@@ -93,8 +93,8 @@
 		593CC4611DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CC45F1DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.swift */; };
 		593CC4621DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593CC4601DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.xib */; };
 		598579A31F9AC431001E07BE /* SalesforceAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598579A21F9AC431001E07BE /* SalesforceAnalytics.framework */; };
-		6CE7E2D6C995837CCF7DE5A2 /* Pods_APPSOfflineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479F323BF2F427D83449D917 /* Pods_APPSOfflineKit.framework */; };
 		87EC4D5C95AD4FCCE062CD09 /* Pods_SoupToModelGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C8199906474FAF992D81E8 /* Pods_SoupToModelGenerator.framework */; };
+		8ACD9016218307C000A58A6A /* PSOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDA97771DF61DF3005EF571 /* PSOperations.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,8 +140,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08D512163E781E868520B7FB /* Pods-APPSOfflineKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPSOfflineKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPSOfflineKit/Pods-APPSOfflineKit.debug.xcconfig"; sourceTree = "<group>"; };
-		0E0DEFE764A808FC90D5589C /* Pods-SoupToModelGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoupToModelGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoupToModelGenerator/Pods-SoupToModelGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		225D51A399F9502D5307EFE1 /* Pods_APPSOfflineKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPSOfflineKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		479F323BF2F427D83449D917 /* Pods_APPSOfflineKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPSOfflineKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E01960F1D637D4000A8FDA1 /* APPSOfflineKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APPSOfflineKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,10 +238,6 @@
 		593CC45F1DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldThenSegmentedControlTableViewCell.swift; sourceTree = "<group>"; };
 		593CC4601DE084460095FDEF /* TextFieldThenSegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldThenSegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
 		598579A21F9AC431001E07BE /* SalesforceAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SalesforceAnalytics.framework; path = Carthage/Build/iOS/SalesforceAnalytics.framework; sourceTree = "<group>"; };
-		8678D56EFA52C88C026501AE /* Pods-APPSOfflineKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPSOfflineKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPSOfflineKit/Pods-APPSOfflineKit.release.xcconfig"; sourceTree = "<group>"; };
-		AEF184DB6EA04B9C64682816 /* Pods-APPSOfflineKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPSOfflineKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPSOfflineKitTests/Pods-APPSOfflineKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BFC2BE20E836E5ED8CA7B5D0 /* Pods-SoupToModelGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoupToModelGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoupToModelGenerator/Pods-SoupToModelGenerator.release.xcconfig"; sourceTree = "<group>"; };
-		C842B7FC72C23AC5203EF5E5 /* Pods-APPSOfflineKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPSOfflineKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPSOfflineKitTests/Pods-APPSOfflineKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,13 +245,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACD9016218307C000A58A6A /* PSOperations.framework in Frameworks */,
 				4EF51F9F1ED3703000FBCE0D /* APPSUIKit.framework in Frameworks */,
 				4E146A081D6CD8F400AB8FD4 /* Reusable.framework in Frameworks */,
 				4E4BCCB41D6B309A0054B1EF /* SmartSync.framework in Frameworks */,
 				4EF567C01D6944AB00568DFB /* SalesforceSDKCore.framework in Frameworks */,
 				598579A31F9AC431001E07BE /* SalesforceAnalytics.framework in Frameworks */,
 				4EF567C11D6944AB00568DFB /* SmartStore.framework in Frameworks */,
-				6CE7E2D6C995837CCF7DE5A2 /* Pods_APPSOfflineKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +286,6 @@
 				4E4BCC831D6B26070054B1EF /* APPSOfflineKitTests */,
 				4E0196101D637D4000A8FDA1 /* Products */,
 				671383A337D268590D254AF7 /* Frameworks */,
-				F22F7DF331B11D25F486C357 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,19 +500,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F22F7DF331B11D25F486C357 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				08D512163E781E868520B7FB /* Pods-APPSOfflineKit.debug.xcconfig */,
-				8678D56EFA52C88C026501AE /* Pods-APPSOfflineKit.release.xcconfig */,
-				AEF184DB6EA04B9C64682816 /* Pods-APPSOfflineKitTests.debug.xcconfig */,
-				C842B7FC72C23AC5203EF5E5 /* Pods-APPSOfflineKitTests.release.xcconfig */,
-				0E0DEFE764A808FC90D5589C /* Pods-SoupToModelGenerator.debug.xcconfig */,
-				BFC2BE20E836E5ED8CA7B5D0 /* Pods-SoupToModelGenerator.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -542,7 +522,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E0196171D637D4000A8FDA1 /* Build configuration list for PBXNativeTarget "APPSOfflineKit" */;
 			buildPhases = (
-				5C16FBC2BFEEB39225ABD2F9 /* [CP] Check Pods Manifest.lock */,
 				4E01960A1D637D4000A8FDA1 /* Sources */,
 				4E01960B1D637D4000A8FDA1 /* Frameworks */,
 				4E01960C1D637D4000A8FDA1 /* Headers */,
@@ -683,24 +662,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-APPSOfflineKitTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C16FBC2BFEEB39225ABD2F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-APPSOfflineKit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -938,7 +899,6 @@
 		};
 		4E0196181D637D4000A8FDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08D512163E781E868520B7FB /* Pods-APPSOfflineKit.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
@@ -966,7 +926,6 @@
 		};
 		4E0196191D637D4000A8FDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8678D56EFA52C88C026501AE /* Pods-APPSOfflineKit.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
@@ -994,7 +953,6 @@
 		};
 		4E2F81C91D65098E00008D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E0DEFE764A808FC90D5589C /* Pods-SoupToModelGenerator.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1008,7 +966,6 @@
 		};
 		4E2F81CA1D65098E00008D10 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFC2BE20E836E5ED8CA7B5D0 /* Pods-SoupToModelGenerator.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1021,7 +978,6 @@
 		};
 		4E4BCC8B1D6B26070054B1EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEF184DB6EA04B9C64682816 /* Pods-APPSOfflineKitTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RRQ5A84X9R;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1040,7 +996,6 @@
 		};
 		4E4BCC8C1D6B26070054B1EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C842B7FC72C23AC5203EF5E5 /* Pods-APPSOfflineKitTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RRQ5A84X9R;
 				FRAMEWORK_SEARCH_PATHS = (

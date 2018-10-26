@@ -6,4 +6,8 @@ github "appstronomy/SalesforceMobileSDK-iOS" "xcode9" # based on release forcedo
 
 github "AliSoftware/Reusable" ~> 4.0.1
 
+# PSOperations: A framework for advanced NSOperations usage
+# Version for Swift 3.0
+github "pluralsight/PSOperations" ~> 3.0.0
+
 
