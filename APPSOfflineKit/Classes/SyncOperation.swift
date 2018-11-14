@@ -45,6 +45,10 @@ open class SyncOperation<T:SoupObject>: PSOperation {
     override open func execute() {
         
         if let soupId = soupId {
+            
+            self.logger.log(SyncOperation.self, level: .debug,
+                                  message:"updateRemoteDataWithSoupId")
+            
             soupManager.updateRemoteDataWithSoupId(soupId) { [weak self] (success) -> Void in
                 guard let strongSelf = self else { return }
                 
