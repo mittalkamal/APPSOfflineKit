@@ -13,9 +13,7 @@ import SmartSync
 
 final public class SyncUpIdTarget: SFSyncUpTarget {
     
-    public let logger = SFSDKLogger.sharedInstance(withComponent: "SyncUpIdTarget")
-
-
+    
     let syncTargetIdKey = "SyncUpIdTarget.targetIds"
 
     let soupId: SoupId
@@ -25,10 +23,6 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
     
     public init(soupId: SoupId) {
         
-        self.logger.log(SyncUpIdTarget.self, level: .debug,
-                        message:"-----init----")
-        
-        
         self.soupId = soupId
         super.init()
         commonInit()
@@ -36,10 +30,7 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
     
     public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
         
-        self.logger.log(SyncUpIdTarget.self, level: .debug,
-                              message:"-----createFieldlist init----")
-        
-        soupId = createFieldlist[0] as! SoupId
+        soupId = 1
         super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
         commonInit()
     }
@@ -47,10 +38,6 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
    
     
     override public init!(dict: [AnyHashable: Any]!) {
-        
-        self.logger.log(SyncUpIdTarget.self, level: .debug,
-                        message:"----dict init----")
-        
         
         soupId = dict[syncTargetIdKey] as! SoupId
         super.init(dict: dict)
