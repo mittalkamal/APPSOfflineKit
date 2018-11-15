@@ -12,6 +12,9 @@ import SmartSync
 /// Class to sync up individual records specified by id
 
 final public class SyncUpIdTarget: SFSyncUpTarget {
+    
+    public let logger = SFSDKLogger.sharedInstance(withComponent: "SyncUpIdTarget")
+
 
     let syncTargetIdKey = "SyncUpIdTarget.targetIds"
 
@@ -21,12 +24,34 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
     // MARK: Initialization
     
     public init(soupId: SoupId) {
+        
+        self.logger.log(SyncUpIdTarget.self, level: .debug,
+                        message:"-----init----")
+        
+        
         self.soupId = soupId
         super.init()
         commonInit()
     }
     
+    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
+        
+        self.logger.log(SyncUpIdTarget.self, level: .debug,
+                              message:"-----createFieldlist init----")
+        
+        soupId = createFieldlist[0] as! SoupId
+        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
+        commonInit()
+    }
+    
+   
+    
     override public init!(dict: [AnyHashable: Any]!) {
+        
+        self.logger.log(SyncUpIdTarget.self, level: .debug,
+                        message:"----dict init----")
+        
+        
         soupId = dict[syncTargetIdKey] as! SoupId
         super.init(dict: dict)
         commonInit()
