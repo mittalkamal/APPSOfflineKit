@@ -308,9 +308,15 @@ open class SoupManager<T:SoupObject>: NSObject {
             var fieldNames: [String]?
             
             if soupObject.isLocallyCreated {
+                
                 fieldNames = me.soupDescription.creatableFieldNames
+                logger.log(SoupManager.self, level: .error,
+                           message:"\(fieldNames)--isLocallyCreated------")
             } else if soupObject.isLocallyUpdated {
+              
                 fieldNames = me.soupDescription.updatableFieldNames
+                logger.log(SoupManager.self, level: .error,
+                           message:"\(fieldNames)--isLocallyUpdated------")
             } else if soupObject.isLocallyDeleted {
                 fieldNames = ["Id"]
             }
@@ -326,19 +332,27 @@ open class SoupManager<T:SoupObject>: NSObject {
                        message:"SoupId:= \(soupId)-----before SyncUpIdTarget------")
         
             
-            let target = SyncUpIdTarget(soupId: soupId)
+           // let target = SyncUpIdTarget(soupId: soupId)
             
             logger.log(SoupManager.self, level: .error,
                        message:"SoupId:= \(soupId)-----after SyncUpIdTarget------")
             
             
-            me.syncMgr.syncUp(with: target, options: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
+            me.syncMgr.syncUp(with: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
                 if (sync?.isDone())! || (sync?.hasFailed())! {
                     DispatchQueue.main.async(execute: { () -> Void in
                         completion((sync?.isDone())!)
                     })
                 }
             }
+            
+//            me.syncMgr.syncUp(with: target, options: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
+//                if (sync?.isDone())! || (sync?.hasFailed())! {
+//                    DispatchQueue.main.async(execute: { () -> Void in
+//                        completion((sync?.isDone())!)
+//                    })
+//                }
+//            }
         }
     }
 

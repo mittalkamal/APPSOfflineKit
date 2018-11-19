@@ -22,19 +22,19 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
     // MARK: Initialization
     
     public init(soupId: SoupId) {
-        
+
         self.soupId = soupId
         super.init()
         commonInit()
     }
     
-//    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
-//
-//        soupId = 1
-//        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
-//        commonInit()
-//    }
-//
+    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
+
+        soupId = 1
+        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
+        commonInit()
+    }
+
    
     
     override public init!(dict: [AnyHashable: Any]!) {
