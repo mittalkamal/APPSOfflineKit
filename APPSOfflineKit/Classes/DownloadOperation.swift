@@ -124,10 +124,7 @@ class __DownloadOperation<SO: SoupObject>: PSOperation {
     
     override func execute() {
         
-        self.logger.log(DownloadOperation.self, level: .error,
-                        message:"----- Download operation execute -----")
         
-     
         if skipExecute {
             finish()
             return

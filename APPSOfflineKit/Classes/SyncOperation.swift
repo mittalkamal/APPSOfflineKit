@@ -46,8 +46,8 @@ open class SyncOperation<T:SoupObject>: PSOperation {
         
         if let soupId = soupId {
             
-            self.logger.log(SyncOperation.self, level: .debug,
-                                  message:"updateRemoteDataWithSoupId")
+            self.logger.log(SyncOperation.self, level: .error,
+                                   message:"'\(self.soupManager.soupDescription.soupName)------' updateRemoteDataWithSoupId:\(soupId)------")
             
             soupManager.updateRemoteDataWithSoupId(soupId) { [weak self] (success) -> Void in
                 guard let strongSelf = self else { return }
@@ -59,6 +59,11 @@ open class SyncOperation<T:SoupObject>: PSOperation {
             }
         }
         else {
+            
+            
+            self.logger.log(SyncOperation.self, level: .error,
+                            message:"'\(self.soupManager.soupDescription.soupName)------' updateRemoteData:------")
+            
             soupManager.updateRemoteData { [weak self] (success) -> Void in
                 guard let strongSelf = self else { return }
                 
