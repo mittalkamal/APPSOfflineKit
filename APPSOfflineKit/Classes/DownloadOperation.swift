@@ -78,6 +78,9 @@ class __DownloadOperation<SO: SoupObject>: PSOperation {
     fileprivate let whereClause: String?
     fileprivate var skipExecute = false
     
+    public let logger = SFSDKLogger.sharedInstance(withComponent: "DownloadOperation")
+
+    
     /**
      Download all objects of soup type.
      */
@@ -120,6 +123,13 @@ class __DownloadOperation<SO: SoupObject>: PSOperation {
     }
     
     override func execute() {
+        
+        self.logger.log(DownloadOperation.self, level: .debug,
+                        message:"----- Download operation execute -----")
+        
+        self.logger.log(DownloadOperation.self, level:.all,
+                        message:"----- Download operation execute all -----")
+        
         
         if skipExecute {
             finish()

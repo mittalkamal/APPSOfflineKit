@@ -322,9 +322,11 @@ open class SoupManager<T:SoupObject>: NSObject {
             
             let syncOptions = SFSyncOptions.newSyncOptions(forSyncUp: fieldNames!, mergeMode: .overwrite)
             
-            logger.log(SoupManager.self, level: .debug, message: "before SyncUpIdTarget") 
+            logger.log(SoupManager.self, level: .debug, message: "before SyncUpIdTarget")
             
             let target = SyncUpIdTarget(soupId: soupId)
+            
+           
             
             logger.log(SoupManager.self, level: .debug, message: "after SyncUpIdTarget")
             
