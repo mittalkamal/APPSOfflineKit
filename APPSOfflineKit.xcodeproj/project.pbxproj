@@ -914,7 +914,7 @@
 				);
 				INFOPLIST_FILE = APPSOfflineKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstronomy.APPSOfflineKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -941,7 +941,7 @@
 				);
 				INFOPLIST_FILE = APPSOfflineKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstronomy.APPSOfflineKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

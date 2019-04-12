@@ -19,8 +19,9 @@ open class SyncOperation<T:SoupObject>: PSOperation {
     fileprivate let soupId: SoupId?
     fileprivate let soupManager: SoupManager<T>
     
-    public let logger = SFSDKLogger.sharedInstance(withComponent: "SyncOperation")
-
+    public let logger = SalesforceLogger.logger(forComponent: "SyncOperation")
+    
+   
     
     // MARK: - Initialization
     
@@ -46,13 +47,14 @@ open class SyncOperation<T:SoupObject>: PSOperation {
         
         if let soupId = soupId {
             
-            self.logger.log(SyncOperation.self, level: .error,
+      
+            self.logger.e(SyncOperation.self,
                                    message:"'\(self.soupManager.soupDescription.soupName)------' updateRemoteDataWithSoupId:\(soupId)------")
             
             soupManager.updateRemoteDataWithSoupId(soupId) { [weak self] (success) -> Void in
                 guard let strongSelf = self else { return }
                 
-                strongSelf.logger.log(SyncOperation.self, level: .debug,
+                strongSelf.logger.d(SyncOperation.self,
                                       message:"'\(strongSelf.soupManager.soupDescription.soupName)' updateRemoteDataWithSoupId:\(soupId)  completed: \(success ? "success" : "failed")")
                 let error = strongSelf.operationError(success: success)
                 strongSelf.finishWithError(error)
@@ -61,13 +63,13 @@ open class SyncOperation<T:SoupObject>: PSOperation {
         else {
             
             
-            self.logger.log(SyncOperation.self, level: .error,
+            self.logger.e(SyncOperation.self,
                             message:"'\(self.soupManager.soupDescription.soupName)------' updateRemoteData:------")
             
             soupManager.updateRemoteData { [weak self] (success) -> Void in
                 guard let strongSelf = self else { return }
                 
-                strongSelf.logger.log(SyncOperation.self, level: .debug,
+                strongSelf.logger.d(SyncOperation.self,
                                       message: "'\(strongSelf.soupManager.soupDescription.soupName)' updateRemoteData completed: \(success ? "success" : "failed")")
                 let error = strongSelf.operationError(success: success)
                 strongSelf.finishWithError(error)
@@ -80,11 +82,11 @@ open class SyncOperation<T:SoupObject>: PSOperation {
         
         if ignoreErrors {
             if let soupId = soupId {
-                logger.log(SyncOperation.self, level: .debug,
+                logger.d(SyncOperation.self,
                                       message: "ignoring error for SoupId:\(soupId) soupName: '\(soupManager.soupDescription.soupName)'")
             }
             else {
-                logger.log(SyncOperation.self, level: .debug,
+                logger.d(SyncOperation.self,
                                       message: "ignoring error for soupName: '\(soupManager.soupDescription.soupName)'")
             }
             return nil

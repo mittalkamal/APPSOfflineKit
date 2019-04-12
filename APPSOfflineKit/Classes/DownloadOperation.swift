@@ -78,8 +78,9 @@ class __DownloadOperation<SO: SoupObject>: PSOperation {
     fileprivate let whereClause: String?
     fileprivate var skipExecute = false
     
-    public let logger = SFSDKLogger.sharedInstance(withComponent: "DownloadOperation")
-
+    public let logger = SalesforceLogger.logger(forComponent: "DownloadOperation")
+    
+    
     
     /**
      Download all objects of soup type.

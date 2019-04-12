@@ -8,17 +8,17 @@
 
 import SmartStore
 
-extension SFSoupIndex {
+extension SoupIndex {
     
     /**
      Compares two arrays of NSSoupIndexes for equality. Equality meaning equal number and contents of NSSoupIndexes but not necessarily 
      in the same order.
      */
-    final public class func arrayOfIndexSpecs(_ indexSpecs: [SFSoupIndex], isEqualToIndexSpecs otherIndexSpecs: [SFSoupIndex], withColumnName: Bool) -> Bool {
-        let indexSpecDicts = SFSoupIndex.asArrayOfDictionaries(indexSpecs, withColumnName: withColumnName)
-        let otherIndexSpecDicts = SFSoupIndex.asArrayOfDictionaries(otherIndexSpecs, withColumnName: withColumnName)
+    final public class func arrayOfIndexSpecs(_ indexSpecs: [SoupIndex], isEqualToIndexSpecs otherIndexSpecs: [SoupIndex], withColumnName: Bool) -> Bool {
+        let indexSpecDicts = SoupIndex.asArrayOfDictionaries(indexSpecs, withColumnName: withColumnName)
+        let otherIndexSpecDicts = SoupIndex.asArrayOfDictionaries(otherIndexSpecs, withColumnName: withColumnName)
         
-        return NSCountedSet(array: indexSpecDicts!).isEqual(NSCountedSet(array: otherIndexSpecDicts!))
+        return NSCountedSet(array: indexSpecDicts).isEqual(to: NSCountedSet(array: otherIndexSpecDicts) as! Set<AnyHashable>)
     }
     
 }

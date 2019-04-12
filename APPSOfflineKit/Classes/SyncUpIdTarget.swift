@@ -11,7 +11,7 @@ import SmartSync
 
 /// Class to sync up individual records specified by id
 
-final public class SyncUpIdTarget: SFSyncUpTarget {
+final public class SyncUpIdTarget: SyncUpTarget {
     
     
     let syncTargetIdKey = "SyncUpIdTarget.targetIds"
@@ -28,16 +28,16 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
         commonInit()
     }
     
-    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
-
-        soupId = 1
-        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
-        commonInit()
-    }
+//    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
+//
+//        soupId = 1
+//        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
+//        commonInit()
+//    }
 
    
     
-    override public init!(dict: [AnyHashable: Any]!) {
+    override public init(dict: [AnyHashable: Any]!) {
         
         soupId = dict[syncTargetIdKey] as! SoupId
         super.init(dict: dict)
@@ -50,17 +50,17 @@ final public class SyncUpIdTarget: SFSyncUpTarget {
     }
     
     
-    override public func getIdsOfRecords(toSyncUp syncManager: SFSmartSyncSyncManager!, soupName: String!) -> [Any]! {
+    override public func getIdsOfRecords(toSyncUp syncManager: SyncManager!, soupName: String!) -> [Any] {
         guard let dirtyIds = super.getIdsOfRecords(toSyncUp: syncManager, soupName: soupName) as? [SoupId] else { return [] }
         
         // Verify dirty target Id
         return dirtyIds.contains(soupId) ? [soupId] : []
     }
     
-    override public func asDict() -> NSMutableDictionary! {
+    override public func asDict() -> NSMutableDictionary {
         let dict = super.asDict()
-        dict?[kSFSyncTargetiOSImplKey] = NSStringFromClass(type(of: self))
-        dict?[syncTargetIdKey] = soupId
+        dict[kSFSyncTargetiOSImplKey] = NSStringFromClass(type(of: self))
+        dict[syncTargetIdKey] = soupId
         return dict
     }
 }
