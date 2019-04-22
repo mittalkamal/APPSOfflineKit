@@ -186,19 +186,24 @@ open class SoupManager<T:SoupObject>: NSObject {
     
     open func fetchLocalDataBySoupId(_ soupId: SoupId) -> T? {
         
+        
         let dataRows: [T] = fetchLocalDataWithPath(SmartStore.soupEntryId, matchKey: soupId.stringValue)
         assert(dataRows.count <= 1)
         return dataRows.first
     }
     
     
+    
+    
     open func fetchLocalDataWithPath(_ path: String, matchKey: String) -> [T] {
         
-        let querySpec = QuerySpec.buildExactQuerySpec(soupName: soupDescription.soupName, path: path, matchKey: matchKey, orderPath: "", order: .ascending, pageSize: SoupManagerMaxQueryPageSize)
+        //let querySpec = QuerySpec.buildExactQuerySpec(soupName: soupDescription.soupName, path: path, matchKey: matchKey, orderPath: "", order: .ascending, pageSize: SoupManagerMaxQueryPageSize)
         
       
+        let querySpec = QuerySpec.buildSmartQuerySpec(smartSql: "select {\(soupDescription.soupName):_soup} from {\(soupDescription.soupName)} where {\(soupDescription.soupName):\(path)} = '\(matchKey)'", pageSize: SoupManagerMaxQueryPageSize)
         
-        let dataRows: [T] = fetchLocalDataWithQuerySpec(querySpec)
+      
+        let dataRows: [T] = fetchLocalDataWithQuerySpec(querySpec!)
         return dataRows
     }
     
