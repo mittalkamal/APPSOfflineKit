@@ -399,13 +399,21 @@ open class SoupManager<T:SoupObject>: NSObject {
 //                }
 //            }
             
-            me.syncMgr.syncUp(target: target, options: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
+            me.syncMgr.syncUp(options: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
                 if (sync.isDone()) || (sync.hasFailed()) {
                     DispatchQueue.main.async(execute: { () -> Void in
                         completion((sync.isDone()))
                     })
                 }
             }
+            
+//            me.syncMgr.syncUp(target: target, options: syncOptions, soupName: me.soupDescription.soupName) { (sync) -> Void in
+//                if (sync.isDone()) || (sync.hasFailed()) {
+//                    DispatchQueue.main.async(execute: { () -> Void in
+//                        completion((sync.isDone()))
+//                    })
+//                }
+//            }
         }
     }
 

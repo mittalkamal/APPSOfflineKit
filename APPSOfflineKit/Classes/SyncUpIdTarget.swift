@@ -33,13 +33,6 @@ final public class SyncUpIdTarget: SyncUpTarget {
         super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
         commonInit()
     }
-    
-//    public override init!(createFieldlist: [Any]!, updateFieldlist: [Any]!) {
-//
-//        soupId = 1
-//        super.init(createFieldlist: createFieldlist, updateFieldlist: updateFieldlist)
-//        commonInit()
-//    }
 
    
     
