@@ -30,7 +30,7 @@ open class SoupManager<T:SoupObject>: NSObject {
     public typealias SyncCompletionBlock = (_ success: Bool) -> Void
     
     let syncMgr: SyncManager
-    open let soupDescription: SoupDescription
+    public let soupDescription: SoupDescription
     var syncDownId = 0
     
     public init(soupDescription: SoupDescription) {

@@ -103,7 +103,7 @@ open class TextFieldThenSegmentedControlTableViewCell: UITableViewCell, NibReusa
         // Are we missing a preselection?
         if (selectedIndex == nil) {
             // YES: Then advise this explicitly, so that we don't show one.
-            selectedIndex = UISegmentedControlNoSegment
+            selectedIndex = UISegmentedControl.noSegment
         }
         
         // Identify which column we're working with for a segmented control
@@ -155,7 +155,7 @@ open class SegmentedControlColumnView: FormHelpColumnView {
 
     
     open var valueText : String? {
-        guard segmentedControl.selectedSegmentIndex != UISegmentedControlNoSegment else { return nil }
+        guard segmentedControl.selectedSegmentIndex != UISegmentedControl.noSegment else { return nil }
         return segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
     }
     

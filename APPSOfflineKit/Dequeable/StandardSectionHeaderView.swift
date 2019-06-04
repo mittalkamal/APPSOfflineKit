@@ -17,7 +17,7 @@ public protocol StandardSectionHeader {
 
 open class StandardSectionHeaderView: UIView, NibReusable, StandardSectionHeader {
     
-    open static var height : CGFloat = 40
+    public static var height : CGFloat = 40
     open var height : CGFloat = 40
     
     @IBOutlet weak open var titleLabel: UILabel!

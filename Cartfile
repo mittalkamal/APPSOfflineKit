@@ -1,11 +1,10 @@
-#github "mittalkamal/APPSUIKit" "Xcode10.1"
+github "mittalkamal/APPSUIKit" "Swift5"
 
 #github "forcedotcom/SalesforceMobileSDK-iOS" == 7.0.0
 
-#github "AliSoftware/Reusable" ~> 4.0.1
+github "AliSoftware/Reusable" ~> 4.0.1
 
 ## PSOperations: A framework for advanced NSOperations usage
 ## Version for Swift 3.0
-#github "pluralsight/PSOperations" ~> 3.0.0
-
+github "pluralsight/PSOperations"
 

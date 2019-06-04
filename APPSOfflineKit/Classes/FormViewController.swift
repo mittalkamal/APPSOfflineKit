@@ -58,11 +58,11 @@ open class FormViewController: UIViewController {
         
         // Enable auto-sizing cells
         tableView.estimatedRowHeight = 70
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         // Enable auto-sizing header
         tableView.estimatedSectionHeaderHeight = 40 // size of StandardSectionHeaderView
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(cellType: TwoColumnLabelsTableViewCell.self)
         tableView.register(cellType: OneColumnLabelTableViewCell.self)
@@ -82,18 +82,21 @@ open class FormViewController: UIViewController {
         let center = NotificationCenter.default
         
         if register {
-            center.addObserver(self, selector: #selector(FormViewController.keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-            center.addObserver(self, selector: #selector(FormViewController.keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            
+           
+            center.addObserver(self, selector: #selector(FormViewController.keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+            
+            center.addObserver(self, selector: #selector(FormViewController.keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         } else {
-            center.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-            center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            center.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+            center.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         }
     }
     
     
-    func keyboardWasShown(_ notif: Notification) {
+    @objc func keyboardWasShown(_ notif: Notification) {
         guard let info = notif.userInfo else { return }
-        guard let kbSize = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
+        guard let kbSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
         
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.height, right: 0)
         tableView.contentInset = contentInsets
@@ -105,44 +108,44 @@ open class FormViewController: UIViewController {
     }
     
     
-    func keyboardWillBeHidden(_ notif: Notification) {
+    @objc func keyboardWillBeHidden(_ notif: Notification) {
         let contentInsets = UIEdgeInsets.zero
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = contentInsets
     }
 
     
-    open func insertSection(_ section: FormSection, atIndex index: Int, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func insertSection(_ section: FormSection, atIndex index: Int, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections.insert(section, at: index)
         tableView.insertSections(IndexSet(integer: index), with: rowAnimation)
     }
     
     
-    open func deleteSectionAtIndex(_ index: Int, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func deleteSectionAtIndex(_ index: Int, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections.remove(at: index)
         tableView.deleteSections(IndexSet(integer: index), with: rowAnimation)
     }
     
     
-    open func reloadSection(_ section: FormSection, atIndex index: Int, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func reloadSection(_ section: FormSection, atIndex index: Int, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections[index] = section
         tableView.reloadSections(IndexSet(integer: index), with: rowAnimation)
     }
     
 
-    open func insertCellType(_ cellType: FormCellType, atIndexPath indexPath: IndexPath, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func insertCellType(_ cellType: FormCellType, atIndexPath indexPath: IndexPath, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections[indexPath.section].cellTypes.insert(cellType, at: indexPath.row)
         tableView.insertRows(at: [indexPath], with: rowAnimation)
     }
     
     
-    open func deleteCellTypeAtIndexPath(_ indexPath: IndexPath, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func deleteCellTypeAtIndexPath(_ indexPath: IndexPath, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections[indexPath.section].cellTypes.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: rowAnimation)
     }
     
     
-    open func reloadCellTypeAtIndexPath(_ cellType: FormCellType, atIndexPath indexPath: IndexPath, withRowAnimation rowAnimation: UITableViewRowAnimation) {
+    open func reloadCellTypeAtIndexPath(_ cellType: FormCellType, atIndexPath indexPath: IndexPath, withRowAnimation rowAnimation: UITableView.RowAnimation) {
         displayedSections[indexPath.section].cellTypes[indexPath.row] = cellType
         tableView.reloadRows(at: [indexPath], with: rowAnimation)
     }
@@ -246,7 +249,7 @@ extension FormViewController: UITableViewDataSource {
     }
     
     
-    final func segmentedControlDidChangeValue(_ segmentedControl: UISegmentedControl) {
+    @objc final func segmentedControlDidChangeValue(_ segmentedControl: UISegmentedControl) {
         
         guard let indexPath = tableView.indexPathForView(segmentedControl) else { return }
         
@@ -263,7 +266,7 @@ extension FormViewController: UITableViewDataSource {
     }
     
     
-    final func switchControlDidChangeValue(_ switchControl: UISwitch) {
+    @objc final func switchControlDidChangeValue(_ switchControl: UISwitch) {
         
         guard let indexPath = tableView.indexPathForView(switchControl) else { return }
         

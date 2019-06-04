@@ -18,7 +18,7 @@ extension UITableView {
      - parameter atScrollPosition: A constant that identifies a relative position in the table view (top, middle, bottom) for row when scrolling concludes.
      - parameter animated:         True if you want to animate the change in position; false if it should be immediate.
      */
-    open func scrollView(_ view: UIView, atScrollPosition: UITableViewScrollPosition, animated: Bool) {
+    open func scrollView(_ view: UIView, atScrollPosition: UITableView.ScrollPosition, animated: Bool) {
         if let indexPath = indexPathForView(view) {
             scrollToRow(at: indexPath, at: atScrollPosition, animated: animated)
         }

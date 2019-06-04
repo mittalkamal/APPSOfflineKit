@@ -24,7 +24,7 @@ final public class Appearance {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().isTranslucent = false
         
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: navigationBarTitleFont, NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: navigationBarTitleFont, NSAttributedString.Key.foregroundColor: UIColor.white]
         
         // Reset Nav Bar appearance back to defaults when contained in ModalNavigationController
         let modalNavBar = UINavigationBar.appearance(whenContainedInInstancesOf: [ModalNavigationController.self])
@@ -43,9 +43,9 @@ final public class Appearance {
     
     
     static fileprivate func configureTabBarAppearance(_ primaryColor: UIColor) {
-        let attrs = [NSFontAttributeName: tabBarTitleFont]
+        let attrs = [NSAttributedString.Key.font: tabBarTitleFont]
         let tabBarItem = UITabBarItem.appearance(whenContainedInInstancesOf: [BigTabBar.self])
-        tabBarItem.setTitleTextAttributes(attrs, for: UIControlState())
+        tabBarItem.setTitleTextAttributes(attrs, for: UIControl.State())
     }
     
     public static var navigationBarTitleFont: UIFont {

@@ -57,8 +57,8 @@ open class FormSection: DisplayedSectionHeaderType {
 
 open class TextCellViewModel {
     
-    open var accessoryType: UITableViewCellAccessoryType? //= .None
-    open var selectionStyle: UITableViewCellSelectionStyle? // = .Default
+    open var accessoryType: UITableViewCell.AccessoryType? //= .None
+    open var selectionStyle: UITableViewCell.SelectionStyle? // = .Default
     
     open class TextFieldViewModel {
         open var titleText: String?
@@ -99,7 +99,7 @@ open class TextCellViewModel {
 open class SegmentedControlCellViewModel {
     open var titleText: String?
     open var titles: [String]          = []
-    open var selectedSegmentIndex: Int = UISegmentedControlNoSegment
+    open var selectedSegmentIndex: Int = UISegmentedControl.noSegment
     open var enabled: Bool             = false
     open var tag: Int                  = 0
     open var isRequired: Bool          = false

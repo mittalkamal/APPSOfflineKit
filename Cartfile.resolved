@@ -1,1 +1,5 @@
-github "forcedotcom/SalesforceMobileSDK-iOS" "v7.0.0"
+github "AliSoftware/Reusable" "4.1.0"
+github "CocoaLumberjack/CocoaLumberjack" "3.5.3"
+github "mittalkamal/APPSFoundation" "8bed21dbbe7a9ca80883c76dfc8f1aac4335a75f"
+github "mittalkamal/APPSUIKit" "6edb0bc5c2923d8dd6a3e95aec7a678963c4e35c"
+github "pluralsight/PSOperations" "5.0.1"
