@@ -464,15 +464,15 @@ extension FormViewController: UITextViewDelegate {
 
 extension FormViewController {
     
-    open func notifyTextChanged(_ text: String?, atIndexPath indexPath: IndexPath, tag: Int) {
+   @objc open func notifyTextChanged(_ text: String?, atIndexPath indexPath: IndexPath, tag: Int) {
     }
     
 
-    open func notifySegmentedControlDidChangeValue(_ segmentedControl: UISegmentedControl, atIndexPath: IndexPath, tag: Int) {
+   @objc open func notifySegmentedControlDidChangeValue(_ segmentedControl: UISegmentedControl, atIndexPath: IndexPath, tag: Int) {
     }
     
     
-    open func notifySwitchControlDidChangeValue(_ switchControl: UISwitch, atIndexPath: IndexPath, tag: Int) {
+   @objc open func notifySwitchControlDidChangeValue(_ switchControl: UISwitch, atIndexPath: IndexPath, tag: Int) {
     }
     
 }
