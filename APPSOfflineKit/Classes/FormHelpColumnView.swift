@@ -41,12 +41,11 @@ open class FormHelpColumnView: UIStackView {
     }
     
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-         super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-//        if context == &helpTextContext {
-//            updateSpacing()
-//        } else {
-//            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-//        }
+        if context == &helpTextContext {
+            updateSpacing()
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
     }
     
     open func updateSpacing() {
